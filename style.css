@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    background: url(img/bg.jpg) no-repeat;
+    background-size: 100%;
+}
+div.area {
+    width: 100%;
+    height: 100%;
+}
+div.sheep {
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    background: url(img/sheep/sheep-1.png) no-repeat;
+    background-size: 100%;
+    transform: translate(1300px, -200px);
+}
+div.food {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    width: 90px;
+    height: 90px;
+    background: url(img/klever.png) no-repeat;
+    background-size: 100%;
+    transform: translate(750px, 700px);
+}
+.start {
+    animation: start-anim 2s 1s forwards;
+    transition: animation 2s linear; 
+}
+@keyframes start-anim {
+    0% { transform: translate(1300px, -200px); }
+    80% { transform: translate(1300px, 630px); }
+    100% { transform: translate(1300px, 630px); }
+}
+.walk {
+   animation: walk 15s forwards; 
+   transition: animation 2s linear; 
+}
+@keyframes walk {
+    0% { transform: translate(1300px, 630px) rotateY(0deg); background: url(img/sheep/sheep_shot.gif) no-repeat; background-size: 100%; }
+    21% { transform: translate(300px, 630px) rotateY(0deg); }
+    25% { transform: translate(300px, 630px) rotateY(180deg); }
+    46% { transform: translate(1100px, 630px) rotateY(180deg); } 
+    50% { transform: translate(1100px, 630px) rotateY(0deg); }
+    71% { transform: translate(200px, 630px) rotateY(0deg); }
+    75% { transform: translate(200px, 630px) rotateY(180deg); }
+    96% { transform: translate(600px, 630px) rotateY(180deg); background: url(img/sheep/sheep_shot.gif) no-repeat; background-size: 100%; }
+    100% { transform: translate(600px, 630px) rotateY(180deg); background: url(img/sheep/sheep-1.png) no-repeat; background-size: 100%; }
+}
+.food {
+    animation: food 10s 6s forwards; 
+    transition: animation 2s linear; 
+}
+@keyframes food {
+    0% { transform: translate(750px, 700px); width: 90px; height: 90px; }
+    25% { transform: translate(760px, 705px); width: 70px; height: 70px; }
+    50% { transform: translate(780px, 710px); width: 40px; height: 40px; }
+    75% { transform: translate(805px, 720px); width: 20px; height: 20px; }
+    100% { transform: translate(800px, 720px); width: 10px; height: 10px; }
+}
+.grow {
+    animation: grow 10s forwards; 
+    transition: animation 2s linear;
+    transform: rotateY(180deg); 
+}
+@keyframes grow {
+    0% { transform: translate(600px, 630px) rotateY(180deg); width: 200px; height: 200px; }
+    25% { transform: translate(590px, 615px) rotateY(180deg); width: 220px; height: 220px; }
+    50% { transform: translate(580px, 600px) rotateY(180deg); width: 240px; height: 240px; }
+    75% { transform: translate(570px, 600px) rotateY(180deg); width: 260px; height: 260px; }
+    100% { transform: translate(560px, 580px) rotateY(180deg); width: 280px; height: 280px; }
+}
